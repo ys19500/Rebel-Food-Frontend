@@ -8,7 +8,7 @@ url = st.text_input("Enter the URL to scrape:")
 if st.button("Scrape"):
     if url:
         with st.spinner("Scraping..."):
-            response = requests.post("https://rebel-foods-bot-backend.onrender.com", json={"url": url})
+            response = requests.post("https://rebel-foods-bot-backend.onrender.com/scrape", json={"url": url})
             if response.status_code == 200:
                 result = response.json()
                 if "data" in result:
